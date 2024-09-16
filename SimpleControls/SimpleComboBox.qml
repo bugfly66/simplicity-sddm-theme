@@ -38,7 +38,7 @@ FocusScope {
     property alias model: listView.model
     property int index: 0
     property alias arrowColor: arrow.color
-    property alias arrowIcon:arrowIcon.source
+    property alias arrowIcon: arrowIcon.source
 
     property Component rowDelegate: defaultRowDelegate
     property string currentText: ""
