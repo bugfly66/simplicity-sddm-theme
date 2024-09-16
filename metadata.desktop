@@ -14,4 +14,4 @@ TranslationsDirectory=translations
 Theme-Id=simplicity
 Theme-API=2.0
 Website=https://github.com/gabretana/sddm-theme-simplicity
-
+QtVersion=6

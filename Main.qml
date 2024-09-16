@@ -14,16 +14,26 @@ Rectangle {
     
     Connections {
         target: sddm
-        onLoginSucceeded: {}
-        onLoginFailed: {
+        function onLoginSucceeded() {}
+        function onLoginFailed() {
             pw_entry.text = ""
             pw_entry.focus = true
             errorMessage.color = "red"
             errorMessage.text = textConstants.loginFailed
         }
     }
-    
     Background {
+        anchors.fill: parent
+        source: Qt.resolvedUrl(config.background)
+        fillMode: Image.PreserveAspectCrop
+        onStatusChanged: {
+            var defaultBackground = Qt.resolvedUrl(config.defaultBackground)
+            if (status == Image.Error && source != defaultBackground) {
+                source = defaultBackground
+            }
+        }
+    }
+   /* Background {
         anchors.fill: parent
         source: config.background
         fillMode: Image.PreserveAspectCrop
@@ -32,7 +42,7 @@ Rectangle {
                 source = config.defaultBackground
             }
         }
-    }
+    }*/
     
     Rectangle {
         anchors.fill: parent
